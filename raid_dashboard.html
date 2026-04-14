@@ -1,0 +1,730 @@
+
+<html>
+<head>
+<style>
+
+body {
+    margin:0;
+    background:#0b0f14;
+    color:#e6edf3;
+    font-family:Arial;
+}
+
+/* =========================
+   HEADER
+========================= */
+.header {
+    display:flex;
+    align-items:flex-start;
+    justify-content:flex-start;
+    padding:16px 14px;
+    border-bottom:1px solid #1f2a37;
+    max-width:1750px;
+    margin:0 auto;
+    gap:12px;
+}
+
+/* Player banner — left side */
+.player {
+    flex-shrink:0;
+    width:calc(25% - 9px);
+    position:relative;
+}
+
+.player-banner-wrap {
+    position:relative;
+    width:100%;
+}
+
+.player-banner-img {
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:12px;
+}
+
+.player-name {
+    position:absolute;
+    top:8px;
+    left:70px;
+    font-size:30px;
+    font-weight:bold;
+    text-shadow:0 2px 10px rgba(0,0,0,0.6);
+}
+
+.player-total {
+    position:absolute;
+    top:8px;
+    right:10px;
+    font-size:28px;
+    font-weight:bold;
+    text-shadow:0 2px 10px rgba(0,0,0,0.6);
+}
+
+/* Stat boxes — right side, stacked, same height as banner */
+.header-stats {
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    flex:0 0 220px;
+    align-self:stretch;
+}
+
+.stat-box {
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    border-radius:8px;
+    font-size:15px;
+    font-weight:bold;
+    text-align:center;
+    padding:0 14px;
+    box-sizing:border-box;
+}
+
+.stat-box-label {
+    font-size:11px;
+    font-weight:normal;
+    opacity:0.75;
+    margin-bottom:4px;
+    letter-spacing:0.5px;
+    text-transform:uppercase;
+}
+
+.stat-box-value {
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.2;
+}
+
+.speed-box {
+    border:2px solid #ff3b3b;
+    color:#ff3b3b;
+    background:rgba(255,0,0,0.08);
+}
+
+.time-box {
+    border:2px solid #d946ef;
+    color:#d946ef;
+    background:rgba(217,70,239,0.08);
+}
+
+/* =========================
+   GRID
+========================= */
+.grid {
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:12px;
+    padding:16px 14px;
+    max-width:1750px;
+    margin:0 auto;
+}
+
+/* =========================
+   RAID CARDS
+========================= */
+.banner-wrap { position:relative; }
+
+.banner {
+    width:100%;
+    height:160px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.overlay-title {
+    position:absolute;
+    left:12px;
+    top:10px;
+    font-size:26px;
+    font-weight:bold;
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
+}
+
+.overlay-clears {
+    position:absolute;
+    right:12px;
+    bottom:10px;
+    text-align:right;
+    text-shadow:0 2px 8px rgba(0,0,0,0.7);
+}
+
+.overlay-clears .big {
+    font-size:48px;
+    font-weight:bold;
+}
+
+.overlay-clears .sub {
+    font-size:12px;
+    opacity:0.8;
+}
+
+/* =========================
+   TAGS
+========================= */
+.tags-row {
+    display:flex;
+    flex-wrap:wrap;
+    gap:5px;
+    padding:6px 0 2px 0;
+    min-height:10px;
+}
+
+.tag {
+    font-size:10px;
+    font-weight:bold;
+    padding:3px 7px;
+    border-radius:4px;
+    letter-spacing:0.5px;
+    border:1px solid transparent;
+}
+
+.tag-flawless { background:rgba(255,215,0,0.12);  color:#ffd700; border-color:#c8a800; }
+.tag-group    { background:rgba(0,180,255,0.12);  color:#64d8ff; border-color:#00b8ff; }
+.tag-dayone   { background:rgba(255,50,50,0.12);  color:#ff7070; border-color:#cc2222; }
+.tag-default  { background:rgba(255,255,255,0.07);color:#aaa;    border-color:#444;    }
+
+/* =========================
+   STATS
+========================= */
+.card {
+    background:#111823;
+    border:1px solid #1f2a37;
+    border-radius:12px;
+    padding:16px;
+}
+
+.row {
+    display:flex;
+    justify-content:space-between;
+    margin:6px 0;
+}
+
+.label {
+    font-size:12px;
+    opacity:0.6;
+}
+
+.value {
+    font-weight:bold;
+}
+
+.hard-clears {
+    color:#ffb347;
+}
+
+.time {
+    margin-top:10px;
+    opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <div class="player">
+        <div class="player-banner-wrap">
+            <img class="player-banner-img" src="https://www.bungie.net/common/destiny2_content/icons/84cb228337e0cdc3ae46d4a351cd2a5e.jpg">
+            <div class="player-name">Skiffy</div>
+            <div class="player-total">3646 CLEARS</div>
+        </div>
+    </div>
+
+    <div class="header-stats">
+        <div class="stat-box speed-box">
+            <div class="stat-box-label">Combined Speed</div>
+            <div class="stat-box-value">3h 43m 9s</div>
+        </div>
+        <div class="stat-box time-box">
+            <div class="stat-box-label">Total Time</div>
+            <div class="stat-box-value">200d 16h 52m</div>
+        </div>
+    </div>
+</div>
+
+<div class="grid">
+
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://images.contentstack.io/v3/assets/blte410e3b15535c144/blta98a4e4f5266123e/6878f0ddbbc2d8c4afb288d2/Apollo_Desert_Perpetual_Raid_3840x2160_EMBARGO_JULY_19.jpg"/>
+            <div class="overlay-title">Desert Perpetual</div>
+            <div class="overlay-clears">
+                <div class="big">61</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS TRIO</span><span class="tag tag-dayone">CONTEST</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">7m 36s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">36</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">44</div></div>
+            <div><span class="label">Epic</span><div class="value hard-clears">17</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">37840</div></div>
+            <div><span class="label">Deaths</span><div class="value">1511</div></div>
+            <div><span class="label">Assists</span><div class="value">11070</div></div>
+        </div>
+
+        <div class="time">Time Played: 6d 0h 0m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/salvationsedge.jpg"/>
+            <div class="overlay-title">Salvation's Edge</div>
+            <div class="overlay-clears">
+                <div class="big">127</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS</span><span class="tag tag-group">SOLO</span><span class="tag tag-dayone">CONTEST</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">58m 0s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">68</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">119</div></div>
+            <div><span class="label">Master</span><div class="value hard-clears">8</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">101213</div></div>
+            <div><span class="label">Deaths</span><div class="value">3093</div></div>
+            <div><span class="label">Assists</span><div class="value">15542</div></div>
+        </div>
+
+        <div class="time">Time Played: 12d 8h 17m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/crotasend.jpg"/>
+            <div class="overlay-title">Crota's End</div>
+            <div class="overlay-clears">
+                <div class="big">74</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS DUO</span><span class="tag tag-dayone">CHALLENGE DAY ONE</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">24m 43s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">27</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">70</div></div>
+            <div><span class="label">Master</span><div class="value hard-clears">4</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">52757</div></div>
+            <div><span class="label">Deaths</span><div class="value">1128</div></div>
+            <div><span class="label">Assists</span><div class="value">10856</div></div>
+        </div>
+
+        <div class="time">Time Played: 5d 2h 17m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/rootofnightmares.jpg"/>
+            <div class="overlay-title">Root of Nightmares</div>
+            <div class="overlay-clears">
+                <div class="big">145</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS SOLO</span><span class="tag tag-dayone">CONTEST DAY ONE</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">21m 3s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">23</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">143</div></div>
+            <div><span class="label">Master</span><div class="value hard-clears">2</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">47532</div></div>
+            <div><span class="label">Deaths</span><div class="value">1036</div></div>
+            <div><span class="label">Assists</span><div class="value">4887</div></div>
+        </div>
+
+        <div class="time">Time Played: 3d 22h 38m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/kingsfall.jpg"/>
+            <div class="overlay-title">King's Fall</div>
+            <div class="overlay-clears">
+                <div class="big">277</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS</span><span class="tag tag-group">TRIO</span><span class="tag tag-dayone">DAY ONE #4</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">17m 0s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">47</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">255</div></div>
+            <div><span class="label">Master</span><div class="value hard-clears">22</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">1564744</div></div>
+            <div><span class="label">Deaths</span><div class="value">2861</div></div>
+            <div><span class="label">Assists</span><div class="value">15025</div></div>
+        </div>
+
+        <div class="time">Time Played: 29d 5h 25m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/vowofthedisciple.jpg"/>
+            <div class="overlay-title">Vow of the Disciple</div>
+            <div class="overlay-clears">
+                <div class="big">183</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS</span><span class="tag tag-group">TRIO</span><span class="tag tag-dayone">DAY ONE #50</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">28m 23s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">47</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">177</div></div>
+            <div><span class="label">Master</span><div class="value hard-clears">6</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">87590</div></div>
+            <div><span class="label">Deaths</span><div class="value">2642</div></div>
+            <div><span class="label">Assists</span><div class="value">23916</div></div>
+        </div>
+
+        <div class="time">Time Played: 11d 16h 53m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/vaultofglass.jpg"/>
+            <div class="overlay-title">Vault of Glass</div>
+            <div class="overlay-clears">
+                <div class="big">360</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS DUO</span><span class="tag tag-dayone">CHALLENGE DAY ONE</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">22m 39s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">39</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">306</div></div>
+            <div><span class="label">Master</span><div class="value hard-clears">53</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">89801</div></div>
+            <div><span class="label">Deaths</span><div class="value">4377</div></div>
+            <div><span class="label">Assists</span><div class="value">23712</div></div>
+        </div>
+
+        <div class="time">Time Played: 13d 23h 6m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/deepstonecrypt.jpg"/>
+            <div class="overlay-title">Deep Stone Crypt</div>
+            <div class="overlay-clears">
+                <div class="big">409</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS DUO</span><span class="tag tag-dayone">DAY ONE #4</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">19m 14s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">53</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">408</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">82979</div></div>
+            <div><span class="label">Deaths</span><div class="value">3588</div></div>
+            <div><span class="label">Assists</span><div class="value">9315</div></div>
+        </div>
+
+        <div class="time">Time Played: 15d 2h 40m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/gardenofsalvation.jpg"/>
+            <div class="overlay-title">Garden of Salvation</div>
+            <div class="overlay-clears">
+                <div class="big">157</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">16m 41s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">30</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">157</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">39046</div></div>
+            <div><span class="label">Deaths</span><div class="value">1208</div></div>
+            <div><span class="label">Assists</span><div class="value">8932</div></div>
+        </div>
+
+        <div class="time">Time Played: 6d 0h 29m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/lastwish.jpg"/>
+            <div class="overlay-title">Last Wish</div>
+            <div class="overlay-clears">
+                <div class="big">639</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS TRIO</span><span class="tag tag-dayone">WEEK ONE #5</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">7m 50s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">257</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">629</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">394936</div></div>
+            <div><span class="label">Deaths</span><div class="value">14515</div></div>
+            <div><span class="label">Assists</span><div class="value">48127</div></div>
+        </div>
+
+        <div class="time">Time Played: 47d 8h 39m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/crownofsorrow.jpg"/>
+            <div class="overlay-title">Crown of Sorrow</div>
+            <div class="overlay-clears">
+                <div class="big">51</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-flawless">FLAWLESS</span><span class="tag tag-dayone">WEEK ONE</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">14m 3s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">19</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">51</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">9148</div></div>
+            <div><span class="label">Deaths</span><div class="value">576</div></div>
+            <div><span class="label">Assists</span><div class="value">1090</div></div>
+        </div>
+
+        <div class="time">Time Played: 1d 23h 59m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/scourgeofthepast.jpg"/>
+            <div class="overlay-title">Scourge of the Past</div>
+            <div class="overlay-clears">
+                <div class="big">535</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-group">DUO</span><span class="tag tag-dayone">DAY ONE #71</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">7m 33s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">64</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">530</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">42451</div></div>
+            <div><span class="label">Deaths</span><div class="value">5455</div></div>
+            <div><span class="label">Assists</span><div class="value">8980</div></div>
+        </div>
+
+        <div class="time">Time Played: 15d 16h 52m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/spireofstars.jpg"/>
+            <div class="overlay-title">Spire of Stars</div>
+            <div class="overlay-clears">
+                <div class="big">19</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">26m 1s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">7</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">7</div></div>
+            <div><span class="label">Prestige</span><div class="value hard-clears">12</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">4355</div></div>
+            <div><span class="label">Deaths</span><div class="value">304</div></div>
+            <div><span class="label">Assists</span><div class="value">1139</div></div>
+        </div>
+
+        <div class="time">Time Played: 1d 0h 26m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/eaterofworlds.jpg"/>
+            <div class="overlay-title">Eater of Worlds</div>
+            <div class="overlay-clears">
+                <div class="big">120</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-group">DUO</span><span class="tag tag-dayone">DAY ONE</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">22m 29s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">44</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">109</div></div>
+            <div><span class="label">Prestige</span><div class="value hard-clears">10</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">18148</div></div>
+            <div><span class="label">Deaths</span><div class="value">1493</div></div>
+            <div><span class="label">Assists</span><div class="value">5112</div></div>
+        </div>
+
+        <div class="time">Time Played: 4d 9h 11m</div>
+    </div>
+    
+    <div class="card">
+        <div class="banner-wrap">
+            <img class="banner" src="https://img.raidreport.dev/leviathan.jpg"/>
+            <div class="overlay-title">Leviathan</div>
+            <div class="overlay-clears">
+                <div class="big">489</div>
+                <div class="sub">CLEARS</div>
+            </div>
+        </div>
+
+        <div class="tags-row"><span class="tag tag-group">DUO</span><span class="tag tag-dayone">WEEK ONE</span></div>
+
+        <div class="row">
+            <div><span class="label">Fastest</span><div class="value">16m 10s</div></div>
+            <div><span class="label">Sherpas</span><div class="value">139</div></div>
+        </div>
+
+        
+        <div class="row">
+            <div><span class="label">Normal</span><div class="value">340</div></div>
+            <div><span class="label">Prestige</span><div class="value hard-clears">138</div></div>
+        </div>
+
+        <div class="row">
+            <div><span class="label">Kills</span><div class="value">115474</div></div>
+            <div><span class="label">Deaths</span><div class="value">6363</div></div>
+            <div><span class="label">Assists</span><div class="value">20018</div></div>
+        </div>
+
+        <div class="time">Time Played: 26d 20h 0m</div>
+    </div>
+    
+</div>
+
+</body>
+</html>
