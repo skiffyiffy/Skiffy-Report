@@ -11,12 +11,9 @@ body {
     font-family:Arial;
 }
 
-/* =========================
-   HEADER
-========================= */
 .header {
     display:flex;
-    align-items:flex-start;
+    align-items:stretch;
     justify-content:flex-start;
     padding:16px 14px;
     border-bottom:1px solid #1f2a37;
@@ -25,7 +22,6 @@ body {
     gap:12px;
 }
 
-/* Player banner — left side */
 .player {
     flex-shrink:0;
     width:calc(25% - 9px);
@@ -35,6 +31,7 @@ body {
 .player-banner-wrap {
     position:relative;
     width:100%;
+    height:100%;
 }
 
 .player-banner-img {
@@ -62,16 +59,6 @@ body {
     text-shadow:0 2px 10px rgba(0,0,0,0.6);
 }
 
-/* Stat boxes — right side */
-.header-stats {
-    display:flex;
-    flex-direction:column;
-    gap:8px;
-    flex:0 0 220px;
-    align-self:stretch;
-}
-
-/* NEW: description box */
 .header-note {
     flex: 1;
     display:flex;
@@ -86,15 +73,13 @@ body {
     margin-left:6px;
 }
 
-/* Stat box styling */
 .stat-box {
-    flex:1;
+    flex:0 0 220px;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     border-radius:8px;
-    font-size:15px;
     font-weight:bold;
     text-align:center;
     padding:0 14px;
@@ -132,13 +117,8 @@ body {
     border:2px solid #ff69b4;
     color:#ffffff;
     background:rgba(255,105,180,0.08);
-    flex:0 0 220px;
-    align-self:stretch;
 }
 
-/* =========================
-   GRID
-========================= */
 .grid {
     display:grid;
     grid-template-columns:repeat(4, 1fr);
@@ -148,9 +128,6 @@ body {
     margin:0 auto;
 }
 
-/* =========================
-   RAID CARDS
-========================= */
 .banner-wrap { position:relative; }
 
 .banner {
@@ -187,9 +164,6 @@ body {
     opacity:0.8;
 }
 
-/* =========================
-   TAGS
-========================= */
 .tags-row {
     display:flex;
     flex-wrap:wrap;
@@ -212,9 +186,6 @@ body {
 .tag-dayone   { background:rgba(255,50,50,0.12);  color:#ff7070; border-color:#cc2222; }
 .tag-default  { background:rgba(255,255,255,0.07);color:#aaa;    border-color:#444;    }
 
-/* =========================
-   STATS
-========================= */
 .card {
     background:#111823;
     border:1px solid #1f2a37;
@@ -256,19 +227,19 @@ body {
         <div class="player-banner-wrap">
             <img class="player-banner-img" src="https://www.bungie.net/common/destiny2_content/icons/84cb228337e0cdc3ae46d4a351cd2a5e.jpg">
             <div class="player-name">Skiffy</div>
-            <div class="player-total">3650 CLEARS</div>
+            <div class="player-total">3653 CLEARS</div>
         </div>
     </div>
 
-    <div class="header-stats">
-        <div class="stat-box speed-box">
-            <div class="stat-box-label">Combined Speed</div>
-            <div class="stat-box-value">3h 43m 9s</div>
-        </div>
-        <div class="stat-box time-box">
-            <div class="stat-box-label">Total Time</div>
-            <div class="stat-box-value">200d 21h 8m</div>
-        </div>
+    <div class="stat-box speed-box">
+        <div class="stat-box-label">Combined Speed</div>
+        <div class="stat-box-value" style="font-size:22px; margin-bottom:2px;">3h 43m 9s</div>
+    </div>
+
+    <div class="stat-box time-box">
+        <div class="stat-box-label">Total Time</div>
+        <div class="stat-box-value" style="font-size:22px; margin-bottom:2px;">Rank #192</div>
+        <div class="stat-box-value" style="font-size:15px; opacity:0.85;">201d 1h 45m</div>
     </div>
 
     <div class="stat-box wfr-box">
@@ -289,7 +260,7 @@ body {
             <img class="banner" src="https://images.contentstack.io/v3/assets/blte410e3b15535c144/blta98a4e4f5266123e/6878f0ddbbc2d8c4afb288d2/Apollo_Desert_Perpetual_Raid_3840x2160_EMBARGO_JULY_19.jpg"/>
             <div class="overlay-title">Desert Perpetual</div>
             <div class="overlay-clears">
-                <div class="big">64</div>
+                <div class="big">66</div>
                 <div class="sub">CLEARS</div>
             </div>
         </div>
@@ -304,16 +275,16 @@ body {
         
         <div class="row">
             <div><span class="label">Normal</span><div class="value">47</div></div>
-            <div><span class="label">Epic</span><div class="value hard-clears">17</div></div>
+            <div><span class="label">Epic</span><div class="value hard-clears">19</div></div>
         </div>
 
         <div class="row">
-            <div><span class="label">Kills</span><div class="value">38328</div></div>
-            <div><span class="label">Deaths</span><div class="value">1539</div></div>
-            <div><span class="label">Assists</span><div class="value">11256</div></div>
+            <div><span class="label">Kills</span><div class="value">39179</div></div>
+            <div><span class="label">Deaths</span><div class="value">1570</div></div>
+            <div><span class="label">Assists</span><div class="value">11820</div></div>
         </div>
 
-        <div class="time">Time Played: 6d 3h 0m</div>
+        <div class="time">Time Played: 6d 7h 0m</div>
     </div>
     
     <div class="card">
@@ -321,7 +292,7 @@ body {
             <img class="banner" src="https://img.raidreport.dev/salvationsedge.jpg"/>
             <div class="overlay-title">Salvation's Edge</div>
             <div class="overlay-clears">
-                <div class="big">127</div>
+                <div class="big">128</div>
                 <div class="sub">CLEARS</div>
             </div>
         </div>
@@ -335,17 +306,17 @@ body {
 
         
         <div class="row">
-            <div><span class="label">Normal</span><div class="value">119</div></div>
+            <div><span class="label">Normal</span><div class="value">120</div></div>
             <div><span class="label">Master</span><div class="value hard-clears">8</div></div>
         </div>
 
         <div class="row">
-            <div><span class="label">Kills</span><div class="value">101213</div></div>
-            <div><span class="label">Deaths</span><div class="value">3093</div></div>
-            <div><span class="label">Assists</span><div class="value">15542</div></div>
+            <div><span class="label">Kills</span><div class="value">101388</div></div>
+            <div><span class="label">Deaths</span><div class="value">3099</div></div>
+            <div><span class="label">Assists</span><div class="value">15572</div></div>
         </div>
 
-        <div class="time">Time Played: 12d 8h 17m</div>
+        <div class="time">Time Played: 12d 8h 54m</div>
     </div>
     
     <div class="card">
