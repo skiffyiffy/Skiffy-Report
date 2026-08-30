@@ -45,11 +45,12 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
 
 .tags-row { position:absolute; left:12px; bottom:10px; display:flex; flex-wrap:wrap; gap:5px; max-width:65%; }
 .tag { font-size:11px; line-height:1.3; font-weight:bold; padding:5px 8px; border-radius:4px; letter-spacing:0.5px; border:1px solid transparent; text-shadow:0 1px 4px rgba(0,0,0,0.6); }
-.tag-flawless { background:rgba(255,215,0,0.40);  color:#ffd700; border-color:#c8a800; }
-.tag-group    { background:rgba(0,180,255,0.40);  color:#64d8ff; border-color:#00b8ff; }
-.tag-dayone   { background:rgba(255,50,50,0.40);  color:#ff7070; border-color:#cc2222; }
-.tag-default  { background:rgba(255,255,255,0.28);color:#aaa;    border-color:#444;    }
-.tag-link     { text-decoration:none; cursor:pointer; }
+.tag-flawless { background:rgba(255,215,0,0.55);  color:#ffd700; border-color:#c8a800; }
+.tag-group    { background:rgba(0,180,255,0.55);  color:#64d8ff; border-color:#00b8ff; }
+.tag-dayone   { background:rgba(255,50,50,0.55);  color:#ff7070; border-color:#cc2222; }
+.tag-default  { background:rgba(255,255,255,0.35);color:#aaa;    border-color:#444;    }
+.tag-link     { display:inline-flex; align-items:center; text-decoration:none; cursor:default; }
+.tag-link[href] { cursor:pointer; }
 .tag-link:hover .tag { filter:brightness(1.35); }
 
 .card { background:#111823; border:1px solid #1f2a37; border-radius:12px; padding:16px; }
@@ -238,7 +239,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/edge/medium.jpg"/>
             <div class="overlay-title">Salvation's Edge</div>
-            <div class="tags-row"><span class="tag tag-dayone">CONTEST #408</span><span class="tag tag-flawless">FLAWLESS</span><a class="tag-link" href="https://raidhub.io/pgcr/16709335188" target="_blank" rel="noopener"><span class="tag tag-group">SOLO</span></a></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">CONTEST #408</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS</span></span><a class="tag-link" href="https://raidhub.io/pgcr/16709335188" target="_blank" rel="noopener"><span class="tag tag-group">SOLO</span></a></div>
             <div class="overlay-clears">
                 <div class="big">143</div>
                 <div class="sub">CLEARS</div>
@@ -268,7 +269,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/crota/small.jpg"/>
             <div class="overlay-title">Crota's End</div>
-            <div class="tags-row"><span class="tag tag-dayone">CHALLENGE DAY ONE #183</span><span class="tag tag-flawless">FLAWLESS DUO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">CHALLENGE DAY ONE #183</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS DUO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">78</div>
                 <div class="sub">CLEARS</div>
@@ -298,7 +299,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/ron/medium.jpg"/>
             <div class="overlay-title">Root of Nightmares</div>
-            <div class="tags-row"><span class="tag tag-flawless">FLAWLESS SOLO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-flawless">FLAWLESS SOLO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">147</div>
                 <div class="sub">CLEARS</div>
@@ -328,7 +329,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/kf/small.jpg"/>
             <div class="overlay-title">King's Fall</div>
-            <div class="tags-row"><span class="tag tag-dayone">CHALLENGE DAY ONE #4</span><span class="tag tag-dayone">MASTER #1</span><span class="tag tag-flawless">FLAWLESS</span><span class="tag tag-group">TRIO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">CHALLENGE DAY ONE #4</span></span><span class="tag-link"><span class="tag tag-dayone">MASTER #1</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS</span></span><span class="tag-link"><span class="tag tag-group">TRIO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">290</div>
                 <div class="sub">CLEARS</div>
@@ -358,7 +359,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/vow/medium.jpg"/>
             <div class="overlay-title">Vow of the Disciple</div>
-            <div class="tags-row"><span class="tag tag-dayone">DAY ONE #50</span><span class="tag tag-flawless">FLAWLESS</span><span class="tag tag-group">TRIO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">DAY ONE #50</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS</span></span><span class="tag-link"><span class="tag tag-group">TRIO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">186</div>
                 <div class="sub">CLEARS</div>
@@ -388,7 +389,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/vog/medium.jpg"/>
             <div class="overlay-title">Vault of Glass</div>
-            <div class="tags-row"><span class="tag tag-dayone">CHALLENGE DAY ONE #554</span><span class="tag tag-flawless">FLAWLESS DUO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">CHALLENGE DAY ONE #554</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS DUO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">379</div>
                 <div class="sub">CLEARS</div>
@@ -418,7 +419,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/dsc/medium.jpg"/>
             <div class="overlay-title">Deep Stone Crypt</div>
-            <div class="tags-row"><span class="tag tag-dayone">DAY ONE #4</span><span class="tag tag-flawless">FLAWLESS DUO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">DAY ONE #4</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS DUO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">417</div>
                 <div class="sub">CLEARS</div>
@@ -447,7 +448,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://cdn.raidhub.io/content/splash/gos/medium.jpg"/>
             <div class="overlay-title">Garden of Salvation</div>
-            <div class="tags-row"><span class="tag tag-flawless">FLAWLESS</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-flawless">FLAWLESS</span></span></div>
             <div class="overlay-clears">
                 <div class="big">160</div>
                 <div class="sub">CLEARS</div>
@@ -476,7 +477,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/lastwish.jpg"/>
             <div class="overlay-title">Last Wish</div>
-            <div class="tags-row"><span class="tag tag-dayone">WEEK ONE #5</span><span class="tag tag-flawless">FLAWLESS TRIO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">WEEK ONE #5</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS TRIO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">644</div>
                 <div class="sub">CLEARS</div>
@@ -505,7 +506,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/crownofsorrow.jpg"/>
             <div class="overlay-title">Crown of Sorrow</div>
-            <div class="tags-row"><span class="tag tag-dayone">WEEK ONE</span><span class="tag tag-flawless">FLAWLESS</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">WEEK ONE</span></span><span class="tag-link"><span class="tag tag-flawless">FLAWLESS</span></span></div>
             <div class="overlay-clears">
                 <div class="big">51</div>
                 <div class="sub">CLEARS</div>
@@ -534,7 +535,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/scourgeofthepast.jpg"/>
             <div class="overlay-title">Scourge of the Past</div>
-            <div class="tags-row"><span class="tag tag-dayone">DAY ONE #71</span><span class="tag tag-group">DUO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">DAY ONE #71</span></span><span class="tag-link"><span class="tag tag-group">DUO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">535</div>
                 <div class="sub">CLEARS</div>
@@ -593,7 +594,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/eaterofworlds.jpg"/>
             <div class="overlay-title">Eater of Worlds</div>
-            <div class="tags-row"><span class="tag tag-dayone">DAY ONE</span><span class="tag tag-group">DUO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">DAY ONE</span></span><span class="tag-link"><span class="tag tag-group">DUO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">120</div>
                 <div class="sub">CLEARS</div>
@@ -623,7 +624,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/leviathan.jpg"/>
             <div class="overlay-title">Leviathan</div>
-            <div class="tags-row"><span class="tag tag-dayone">WEEK ONE</span><span class="tag tag-group">DUO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-dayone">WEEK ONE</span></span><span class="tag-link"><span class="tag tag-group">DUO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">489</div>
                 <div class="sub">CLEARS</div>
@@ -653,7 +654,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/d1_vaultofglass.jpg"/>
             <div class="overlay-title">Vault of Glass (D1)</div>
-            <div class="tags-row"><span class="tag tag-group">TRIO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-group">TRIO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">128</div>
                 <div class="sub">CLEARS</div>
@@ -679,7 +680,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/d1_crotasend.jpg"/>
             <div class="overlay-title">Crota's End (D1)</div>
-            <div class="tags-row"><span class="tag tag-group">SOLO</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-group">SOLO</span></span></div>
             <div class="overlay-clears">
                 <div class="big">140</div>
                 <div class="sub">CLEARS</div>
@@ -731,7 +732,7 @@ body { margin:0; background:#0b0f14; color:#e6edf3; font-family:Arial; }
         <div class="banner-wrap">
             <img class="banner" src="https://img.raidreport.dev/d1_wrathofthemachine.jpg"/>
             <div class="overlay-title">Wrath of the Machine</div>
-            <div class="tags-row"><span class="tag tag-group">SOLO HARD</span></div>
+            <div class="tags-row"><span class="tag-link"><span class="tag tag-group">SOLO HARD</span></span></div>
             <div class="overlay-clears">
                 <div class="big">1101</div>
                 <div class="sub">CLEARS</div>
